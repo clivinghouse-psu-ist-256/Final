@@ -9,7 +9,7 @@ app.use(express.static('public'));
  * Serve Static Content
  */
 app.get("/", (req,res)=>{
-   res.send()
+   res.sendFile('index.html')
 })
 
 

@@ -5,6 +5,14 @@ import { RouterLink } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+
+  menuItems = [
+    {"title":"Home", "link":['']},
+    {"title":"Shop", "link":['store']}
+  ]
+
   title = 'Store Front';
+  copyright="© "+(new Date()).getFullYear() + ' Shoppe'
 }
