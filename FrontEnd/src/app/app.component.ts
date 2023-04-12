@@ -10,7 +10,7 @@ export class AppComponent {
 
   menuItems = [
     {"title":"Home", "link":['']},
-    {"title":"Shop", "link":['store']}
+    {"title":"Shop", "link":['shop']}
   ]
 
   title = 'Store Front';

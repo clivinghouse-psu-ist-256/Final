@@ -1,0 +1,100 @@
+[
+    {
+        "name": "Coffee Ground",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "751200071679",
+        "sku": "00000001",
+        "properties": {
+            "aroma": "Rich and bold",
+            "flavor": "Robust and smoky",
+            "intensity": 8,
+            "acidic": "Low",
+            "body": "Full-bodied"
+        }
+    },
+    {
+        "name": "Espresso Roast",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "814117058457",
+        "sku": "00000002",
+        "properties": {
+            "aroma": "Dark and earthy",
+            "flavor": "Robust and smoky",
+            "intensity": 10,
+            "acidic": "Low",
+            "body": "Full-bodied"
+        }
+    },
+    {
+        "name": "Light Roast",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "839854053027",
+        "sku": "00000003",
+        "properties": {
+            "aroma": "Fruity and sweet",
+            "flavor": "Light and smooth",
+            "intensity": 5,
+            "acidic": "Low",
+            "body": "Light-bodied"
+        }
+    },
+    {
+        "name": "Medium Roast",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "085388407572",
+        "sku": "00000004",
+        "properties": {
+            "aroma": "Chocolate and nutty",
+            "flavor": "Balanced and smooth",
+            "intensity": 7,
+            "acidic": "Low",
+            "body": "Medium-bodied"
+        }
+    },
+    {
+        "name": "Dark Roast",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "181157008875",
+        "sku": "00000005",
+        "properties": {
+            "aroma": "Smoky and earthy",
+            "flavor": "Robust and bold",
+            "intensity": 9,
+            "acidic": "Low",
+            "body": "Full-bodied"
+        }
+    },
+    {
+        "name": "Decaf Roast",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "229512084686",
+        "sku": "00000006",
+        "properties": {
+            "aroma": "Caramel and nutty",
+            "flavor": "Smooth and sweet",
+            "intensity": 0,
+            "acidic": "Low",
+            "body": "Medium-bodied"
+        }
+    },
+    {
+        "name": "Flavored Roast",
+        "quantity": "1 Bag",
+        "price": 5.99,
+        "upc": "567302917462",
+        "sku": "00000007",
+        "properties": {
+            "aroma": "Fruity and sweet",
+            "flavor": "Light and smooth",
+            "intensity": 5,
+            "acidic": "Low",
+            "body": "Light-bodied"
+        }
+    }
+]
