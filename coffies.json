@@ -2,7 +2,7 @@
     {
         "name": "Coffee Ground",
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 3.99,
         "upc": "751200071679",
         "sku": "00000001",
         "properties": {
@@ -16,7 +16,7 @@
     {
         "name": "Espresso Roast",
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 7.99,
         "upc": "814117058457",
         "sku": "00000002",
         "properties": {
@@ -29,8 +29,9 @@
     },
     {
         "name": "Light Roast",
+       
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 3.99,
         "upc": "839854053027",
         "sku": "00000003",
         "properties": {
@@ -44,7 +45,7 @@
     {
         "name": "Medium Roast",
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 7.99,
         "upc": "085388407572",
         "sku": "00000004",
         "properties": {
@@ -58,7 +59,7 @@
     {
         "name": "Dark Roast",
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 7.99,
         "upc": "181157008875",
         "sku": "00000005",
         "properties": {
@@ -72,7 +73,7 @@
     {
         "name": "Decaf Roast",
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 3.99,
         "upc": "229512084686",
         "sku": "00000006",
         "properties": {
@@ -86,7 +87,7 @@
     {
         "name": "Flavored Roast",
         "quantity": "1 Bag",
-        "price": 5.99,
+        "price": 7.99,
         "upc": "567302917462",
         "sku": "00000007",
         "properties": {

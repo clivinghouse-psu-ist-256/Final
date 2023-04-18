@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { StoreComponent } from './store/store.component';
 import { ProductComponent } from './product/product.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
           PagenotfoundComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
