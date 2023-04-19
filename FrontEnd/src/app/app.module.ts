@@ -8,6 +8,7 @@ import { StoreComponent } from './store/store.component';
 import { ProductComponent } from './product/product.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     StoreComponent,
     
     ProductComponent,
-          PagenotfoundComponent
+          PagenotfoundComponent,
+          CheckoutComponent
   ],
   imports: [
     HttpClientModule,

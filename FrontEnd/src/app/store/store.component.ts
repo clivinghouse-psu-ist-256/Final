@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { coffee } from '../models/coffee';
 import { HttpClient } from '@angular/common/http';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-store',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StoreComponent implements OnInit{
   declare items:coffee[];
-  constructor(private http:HttpClient){}
+  constructor(private http:HttpClient, private cart:CartService){}
   ngOnInit(): void {
     let upc =window.location.href.split('/').pop()
     console.log(window.location.href.split('/').pop())
@@ -21,5 +22,7 @@ export class StoreComponent implements OnInit{
 
   },()=>{})
   }
-
+addCart(item:coffee){
+  this.cart.addToCart(item)
+}
 }
