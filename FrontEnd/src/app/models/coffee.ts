@@ -7,6 +7,7 @@ export interface coffee{
     sku:number;
     properties: properties
 }
+
 export interface properties{
     aroma:string;
     flavor:string;

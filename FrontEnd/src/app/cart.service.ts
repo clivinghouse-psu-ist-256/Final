@@ -16,6 +16,7 @@ export class CartService {
       this.cartPrice+=item.priceTotal
       this.numberOfItems+= item.numberItems
     }
+    this.cartPrice=Number(this.cartPrice.toFixed(2));
   }
   
     addToCart(product: coffee) {
@@ -23,7 +24,7 @@ export class CartService {
       for(let item of this.items){
         if(item.item.upc == product.upc){
           item.numberItems++;
-          item.priceTotal+=product.price
+          item.priceTotal+=Number(product.price.toFixed(2))
           added=true
         }
         

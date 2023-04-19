@@ -36,7 +36,7 @@
                     <td class="text-right font-weight-semibold align-middle p-4">${{item.item.price}}</td>
                     <td class="align-middle p-4"><input type="number" min="0" (change)="cartChange($event)" class="form-control text-center" value="{{item.numberItems}}"></td>
                     <td class="text-right font-weight-semibold align-middle p-4">${{item.priceTotal}}</td>
-                    <td class="text-center align-middle px-0"><a (click)="cart.clearItem(item)" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+                    <td class="text-center align-middle px-0"><button (click)="cart.clearItem(item)" class="btn btn-danger" title="" data-original-title="Remove">×</button></td>
                   </tr>
         
                   
