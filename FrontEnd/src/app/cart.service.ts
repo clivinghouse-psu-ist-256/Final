@@ -6,10 +6,17 @@ import { cartItem } from './models/cartItem';
   providedIn: 'root'
 })
 export class CartService {
+  cartFromStorage = JSON.parse(localStorage.getItem('cart')!) as cartItem[]
   items: cartItem[] = [];
   cartPrice=0.00
   numberOfItems = 0;
-  constructor(){}
+  constructor(){
+    this.cartFromStorage? this.items=this.cartFromStorage: ""
+    for(let item of this.items){
+      this.cartPrice+=item.priceTotal
+      this.numberOfItems+= item.numberItems
+    }
+  }
   
     addToCart(product: coffee) {
       let added=false;
@@ -28,10 +35,12 @@ export class CartService {
       
       this.numberOfItems++;
       this.cartPrice+=product.price
+      this.saveLocalStorage()
     }
  
     getItems() {
       return this.items;
+      this.saveLocalStorage()
     }
     // changeItemQty(item:cart){
 
@@ -43,10 +52,18 @@ export class CartService {
 if (index > -1) { 
   this.items.splice(index,1); 
 }
+this.saveLocalStorage();
   }
     clearCart() {
       this.numberOfItems=0;
       this.items = [];
+      this.saveLocalStorage()
       return this.items;
+      
     }
+
+saveLocalStorage(){
+  localStorage.clear()
+  localStorage.setItem('cart',JSON.stringify(this.items))
+}
 }

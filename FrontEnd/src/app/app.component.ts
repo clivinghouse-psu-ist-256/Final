@@ -11,7 +11,7 @@ export class AppComponent {
 constructor(public cart:CartService){
 
 }
-
+  
   menuItems = [
     {"title":"Home", "link":['']},
     {"title":"Shop", "link":['shop']}

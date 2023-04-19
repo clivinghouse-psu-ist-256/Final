@@ -19,8 +19,10 @@
         </ul>
       
       </div>
-      <div class="justify-content-end me-2">
-        <button type="button" routerLink="/checkout" class="btn btn-primary position-relative">
+      
+      <div *ngIf="cart.numberOfItems > 0" class="justify-content-end me-2">
+       
+        <button type="button" routerLink="/checkout" class="btn btn-primary position-relative" data-bs-toggle="tooltip" data-bs-placement="top" title="Total: {{cart.cartPrice}}">
           Cart
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             {{cart.numberOfItems}}
