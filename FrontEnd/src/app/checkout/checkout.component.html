@@ -1,70 +1,69 @@
-<div class="container px-3 my-5 clearfix">
-    <!-- Shopping cart table -->
-    <div class="card">
-        <div class="card-header">
-            <h2>Shopping Cart</h2>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered m-0">
-                <thead>
-                  <tr>
-                    <!-- Set columns width -->
-                    <th class="text-center py-3 px-4" style="min-width: 400px;">Product Name &amp; Details</th>
-                    <th class="text-right py-3 px-4" style="width: 100px;">Price</th>
-                    <th class="text-center py-3 px-4" style="width: 120px;">Quantity</th>
-                    <th class="text-right py-3 px-4" style="width: 100px;">Total</th>
-                    <th class="text-center align-middle py-3 px-0" style="width: 40px;"><a href="#" class="shop-tooltip float-none text-light" title="" data-original-title="Clear cart"><i class="ino ion-md-trash"></i></a></th>
-                  </tr>
-                </thead>
-                <tbody>
-        
-                  <tr *ngFor="let item of cart.getItems()">
-                    <td class="p-4">
-                      <div class="media align-items-center">
-                        <img src="http://localhost:3000/image/{{item.item.upc}}.jpg" class="d-block ui-w-40 ui-bordered mr-4" alt="">
-                        <div class="media-body">
-                          <a routerLink="/product/{{item.item.upc}}" class="d-block text-dark">{{item.item.name}}</a>
-                          <small>
-                            <span class="text-muted">UPC: {{item.item.upc}} | </span>
-                            <span class="text-muted">Size: </span> EU 37 &nbsp;
-                            
-                          </small>
-                        </div>
-                      </div>
-                    </td>
-                    <td class="text-right font-weight-semibold align-middle p-4">${{item.item.price}}</td>
-                    <td class="align-middle p-4"><input type="number" min="0" (change)="cartChange($event)" class="form-control text-center" value="{{item.numberItems}}"></td>
-                    <td class="text-right font-weight-semibold align-middle p-4">${{item.priceTotal}}</td>
-                    <td class="text-center align-middle px-0"><button (click)="cart.clearItem(item)" class="btn btn-danger" title="" data-original-title="Remove">×</button></td>
-                  </tr>
-        
-                  
-                </tbody>
-              </table>
-            </div>
-            <!-- / Shopping cart table -->
-        
-            <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
-              <div class="mt-4">
-                
+<div class="container-sm" style="max-width: 500px">
+  <div class="card mx-auto m-2">
+    <div class="card-header">
+      <h1 class="h1">Checkout</h1>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Please take a moment to review Your items</h5>
+      
+      <div class="row gap-2 p-2">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-1">
+                #
               </div>
-              <div class="d-flex">
-                <div class="text-right mt-4 mr-5">
-                
-                </div>
-                <div class="text-right mt-4">
-                  <label class="text-muted font-weight-normal m-0">Total price</label>
-                  <div class="text-large"><strong>${{cart.cartPrice}}</strong></div>
-                </div>
+              <div class="col-7 mx-auto">
+                Name
               </div>
-            </div>
-        
-            <div class="float-right">
-              <button type="button" routerLink="/shop" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</button>
-              <button type="button" class="btn btn-lg btn-primary mt-2">Checkout</button>
-            </div>
-        
+            </div> 
           </div>
+          <div *ngFor="let item of cart.items" class="border col-12">
+            <div class="row">
+              <div  class="col-1  border-end d-flex">
+            
+                <div class="mx-auto d-flex align-items-center" >
+                              {{item.numberItems}}
+                </div>
+              </div>
+              <div  class="col-7  border-end d-flex">
+                
+                <div class="me-auto d-flex m-1" >
+                  <img [src]="getImageUrl(item.item.upc)" style="max-width: 50px;" alt="">
+                             <div class="ms-1">
+                              <b>{{item.item.name}} </b><br>
+                              <p style="font-size: x-small;"> UPC: {{item.item.upc}}</p>
+                             </div> 
+                </div>
+              </div>
+              <div  class="col-3  border-end d-flex">
+                
+                <div class="me-auto d-flex m-1" >
+                  
+                </div>
+              </div>
+              <div  class="col-1 m-0 p-0 d-flex justify-content-center">
+               
+                <a  class="m-1 p-0 d-flex align-items-center"><fa-icon [icon]="faTrash"></fa-icon></a>
+                
+              </div>
+           
+            </div>
+          
+      
+        </div>
+        
       </div>
+   
+      <hr>
+      <span class="d-flex">
+        <div class="ms-auto row gap-2 m-2">
+
+        
+        <a (click)="clearCart()" class="btn btn-danger col"> <fa-icon [icon]="faTrash"></fa-icon></a>
+        <a href="#" class="btn btn-primary col ">Checkout</a>
+      </div>
+      </span>
+      
+    </div>
   </div>
+</div>

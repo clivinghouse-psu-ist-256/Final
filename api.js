@@ -7,7 +7,8 @@ const app = express();
 const PORT = 3000;
 
 let corsOptions = {
-	origin : ['http://localhost:4200'],
+	origin : ['http://localhost:4200',
+			  'http://10.10.10.16:4200'],
  }
 
 app.options(cors(corsOptions)) 

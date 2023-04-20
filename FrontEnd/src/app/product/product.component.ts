@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { coffee } from '../models/coffee';
+import { ApiService } from '../api.service';
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -8,14 +10,13 @@ import { coffee } from '../models/coffee';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(public apiSerice:ApiService,private cart:CartService) { }
  declare item:coffee;
   ngOnInit(): void {
     let upc =window.location.href.split('/').pop()
     console.log(window.location.href.split('/').pop())
-  this.http.get<coffee[]>("http://localhost:3000/upc",{params:{
-    search: String(upc)
-  }}).subscribe((res)=>{
+  this.apiSerice.getUpc<coffee[]>(String(upc))
+  .subscribe((res)=>{
     console.log(res[0])
     this.item=res[0]
   },(error)=>{
@@ -23,5 +24,10 @@ export class ProductComponent implements OnInit {
   },()=>{})
   // console.log(returnObj)
 }
-
+getUrl(upc:any){
+ return this.apiSerice.getImageUrl(upc)
+}
+addCart(item:coffee){
+  this.cart.addToCart(item)
+}
 }

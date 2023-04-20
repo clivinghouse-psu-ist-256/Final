@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartService } from './cart.service';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +10,7 @@ import { CartService } from './cart.service';
 })
 
 export class AppComponent {
+  faCart= faCartShopping;
 constructor(public cart:CartService){
 
 }

@@ -21,13 +21,17 @@
       </div>
       <span *ngIf="cart.numberOfItems > 0" class="pull-right">
        
-        <button type="button" routerLink="/checkout" class="btn btn-primary position-relative" data-bs-toggle="tooltip" data-bs-placement="top" title="Total: {{cart.cartPrice}}">
+        <!-- <fa-icon [icon]="faCart" routerLink="/checkout" class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" title="Total: {{cart.cartPrice}}">
           Cart
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             {{cart.numberOfItems}}
-            <span class="visually-hidden">cart</span>
+            
           </span>
-        </button>
+        </fa-icon> -->
+        <a  routerLink="/checkout" class="nav-link nav-icon position-relative me-2" data-bs-toggle="tooltip" data-bs-placement="left" title="Total: {{cart.cartPrice}}">
+          <fa-icon [icon]="faCart"></fa-icon>
+          <span class="position-absolute top-0 start-100 translate-middle badge badge-light rounded-circle bg-danger">{{cart.numberOfItems}}</span>
+        </a>
         
       </span>
       

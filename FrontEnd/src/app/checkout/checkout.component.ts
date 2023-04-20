@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { Router } from '@angular/router';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-checkout',
@@ -8,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent  implements OnInit{
-constructor(public cart:CartService, private route:Router){
+  faTrash = faTrash;
+constructor(public cart:CartService, private route:Router, private apiService:ApiService){
 
 }
   ngOnInit(): void {
@@ -19,5 +22,12 @@ constructor(public cart:CartService, private route:Router){
   cartChange(event:any){
     
     
+  }
+  getImageUrl(upc:any){
+    return this.apiService.getImageUrl(upc)
+  }
+  clearCart(){
+    this.cart.clearCart();
+    this.route.navigate(['/ '])
   }
 }

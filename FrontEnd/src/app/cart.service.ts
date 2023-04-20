@@ -35,7 +35,7 @@ export class CartService {
       console.log(this.items)
       
       this.numberOfItems++;
-      this.cartPrice+=product.price
+      this.cartPrice+=Number(product.price.toFixed(2))  
       this.saveLocalStorage()
     }
  
@@ -49,17 +49,20 @@ export class CartService {
   clearItem(item:cartItem){
     const index = this.items.indexOf(item);
     this.numberOfItems = this.numberOfItems -  item.numberItems;
-    this.cartPrice = this.cartPrice - item.priceTotal
-if (index > -1) { 
-  this.items.splice(index,1); 
-}
+    this.cartPrice = Number((this.cartPrice - item.priceTotal).toFixed(2))
+    if (index > -1) { 
+     this.items.splice(index,1); 
+    }
 this.saveLocalStorage();
-  }
+}
+
+
     clearCart() {
       this.numberOfItems=0;
       this.items = [];
       this.saveLocalStorage()
-      return this.items;
+      this.cartPrice =0.00
+     this.saveLocalStorage()
       
     }
 

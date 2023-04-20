@@ -1,12 +1,13 @@
-<div class="container-lg m-4">
-    <div class="container">
+<div class="">
+
+</div>
 		<div class="card">
 			<div class="container-fliud">
 				<div class="wrapper row">
 					<div class="preview col-md-6">
 						
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><img src="http://localhost:3000/image/{{item.upc}}.jpg" /></div>
+						  <div class="tab-pane active" id="pic-1"><img [src]="getUrl(item.upc)" /></div>
 						 
 						</div>
 						
@@ -34,12 +35,10 @@
 
 						
 						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<button (click)="addCart(item)" class="add-to-cart btn btn-default" type="button">add to cart</button>
 							<!-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
