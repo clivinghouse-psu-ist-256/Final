@@ -6,7 +6,7 @@
       <a class="navbar-brand" routerLink="/">
         <img src="/assets/Logo.jpg" style="max-height: 50px;">
         Shoppe</a>
-      <button class="navbar-toggler ms-auto me-2"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler ms-auto me-2 pull-left"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
@@ -21,7 +21,7 @@
       </div>
       
       
-    </div>
+    
     <span *ngIf="cart.numberOfItems > 0" class="pull-right">
        
       <!-- <fa-icon [icon]="faCart" routerLink="/checkout" class="position-relative" data-bs-toggle="tooltip" data-bs-placement="top" title="Total: {{cart.cartPrice}}">
@@ -37,8 +37,9 @@
       </a>
       
     </span>
+  </div>
   </nav>
-
+<toast message="test"></toast>
 <router-outlet></router-outlet>
 
 <footer class="mt-auto border-top border-1">

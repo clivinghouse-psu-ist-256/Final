@@ -10,6 +10,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ToastComponent } from './toast/toast.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     
     ProductComponent,
           PagenotfoundComponent,
-          CheckoutComponent
+          CheckoutComponent,
+          ToastComponent
   ],
   imports: [
     HttpClientModule,

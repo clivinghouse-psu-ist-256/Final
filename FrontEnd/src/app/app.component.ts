@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CartService } from './cart.service';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
-
+import { ToastComponent } from './toast/toast.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
