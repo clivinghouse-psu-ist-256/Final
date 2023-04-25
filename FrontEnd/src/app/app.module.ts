@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastComponent } from './toast/toast.component';
+import { LottieModule, provideLottieOptions } from 'ngx-lottie';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +25,17 @@ import { ToastComponent } from './toast/toast.component';
           ToastComponent
   ],
   imports: [
+    LottieModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    provideLottieOptions({
+      player: () => import(/* webpackChunkName: 'lottie-web' */ 'lottie-web'),
+    }),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

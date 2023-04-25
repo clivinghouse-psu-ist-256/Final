@@ -24,10 +24,15 @@
 
 						
 						<div class="action">
-							<button (click)="addCart(item)" class="add-to-cart btn btn-default" type="button">add to cart</button>
-							<!-- <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button> -->
+							<button (click)="addCart(item)"  class="d-flex add-to-cart btn btn-default" type="button"><p class="m-0">Add to cart</p>
+								<ng-lottie #animation class="align-middle" [options]="options" (animationCreated)="animationCreated($event)" width="25px" (loopComplete)="stop()"></ng-lottie>
+
+							</button>
+							
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+		

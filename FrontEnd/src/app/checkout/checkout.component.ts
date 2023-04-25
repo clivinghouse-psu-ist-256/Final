@@ -23,7 +23,9 @@ constructor(public cart:CartService, private route:Router, private apiService:Ap
     
     
   }
-
+calcTax(){
+  return (this.cart.cartPrice * 1.06).toFixed(2)
+}
   removeItem( item:cartItem){
 this.cart.clearItem(item);
 if(this.cart.numberOfItems<1){
