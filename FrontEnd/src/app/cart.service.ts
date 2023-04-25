@@ -10,15 +10,36 @@ export class CartService {
   items: cartItem[] = [];
   cartPrice=0.00
   numberOfItems = 0;
+  taxRate = .06
+  tax = 0;
   constructor(){
     this.cartFromStorage? this.items=this.cartFromStorage: ""
     for(let item of this.items){
       this.cartPrice+=item.priceTotal
       this.numberOfItems+= item.numberItems
+      this.tax = Number((this.cartPrice*this.taxRate).toFixed(2))
+
     }
     this.cartPrice=Number(this.cartPrice.toFixed(2));
   }
-  
+ 
+  modifyCount(cartI:cartItem, adjValue:number){
+    for(let item of this.items){
+      if(cartI.item.upc == item.item.upc){
+
+        item.numberItems = adjValue;
+        cartI.priceTotal = Number((adjValue*cartI.item.price).toFixed(2));
+        
+      }
+      this.cartPrice = 0;
+      for(let item of this.items){
+        this.cartPrice = this.cartPrice+item.priceTotal;
+      }
+      this.cartPrice = Number(this.cartPrice.toFixed(2))
+    }
+    this.saveLocalStorage();
+  }
+
     addToCart(product: coffee) {
       let added=false;
       for(let item of this.items){
@@ -39,9 +60,10 @@ export class CartService {
       this.saveLocalStorage()
     }
  
-    getItems() {
-      return this.items;
+    getItems() {  
       this.saveLocalStorage()
+
+      return this.items;
     }
     // changeItemQty(item:cart){
 
@@ -60,13 +82,14 @@ this.saveLocalStorage();
     clearCart() {
       this.numberOfItems=0;
       this.items = [];
-      this.saveLocalStorage()
+      this.tax = 0;
       this.cartPrice =0.00
      this.saveLocalStorage()
       
     }
 
 saveLocalStorage(){
+  this.tax = Number((this.cartPrice*this.taxRate).toFixed(2))
   localStorage.clear()
   localStorage.setItem('cart',JSON.stringify(this.items))
 }

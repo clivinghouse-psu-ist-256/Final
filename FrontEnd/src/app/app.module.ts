@@ -12,6 +12,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastComponent } from './toast/toast.component';
 import { LottieModule, provideLottieOptions } from 'ngx-lottie';
+import  {  FormsModule,  ReactiveFormsModule  }  from  '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { LottieModule, provideLottieOptions } from 'ngx-lottie';
           ToastComponent
   ],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     LottieModule,
     HttpClientModule,
     BrowserModule,

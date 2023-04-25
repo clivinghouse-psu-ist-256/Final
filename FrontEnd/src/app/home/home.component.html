@@ -3,7 +3,7 @@
     <div>
     <h1 class="display-1">The Shoppe</h1>
     <hr class="mb-0 fade-in-text-1">
-    <p class="text-body-secondary text-end mt-0  fade-in-text-2">One Sale At a Time</p>
+    <p class="text-body-secondary text-end mt-0  fade-in-text-2">Best Beans for Baristas</p>
     <div class="container-sm">
         <span>At The Shoppe, we offer a wide variety of coffee drinks to suit every taste. From classic espresso drinks like lattes, cappuccinos, and macchiatos, to unique specialty drinks like the London Fog and the Hazelnut Mocha, we have something to tantalize everyone’s taste buds. We also offer a selection of teas, smoothies, and freshly baked pastries. Our baristas use only the freshest ingredients to craft each drink and take pride in their artistry. With our creative menu and knowledgeable baristas, The Shoppe is the perfect spot for coffee aficionados and casual coffee drinkers alike.</span>
         
@@ -11,6 +11,36 @@
     <div class="m-2 text-center">
         <button class="btn btn-primary" [routerLink]="['shop']">View Store</button>
     </div>
-    
+    <div class="card">
+        <div class="card-header">
+          Submit Feedback
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Let us know how we are doing.</h5>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+           
+            <div class="input-group mb-3">
+                <span class="input-group-text"   id="basic-addon1">Name</span>
+                <input type="text" name = "fullName" placeholder = "Your full name" formControlName="fullName" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+              </div>
+          
+              <div class="input-group mb-3">
+                <span class="input-group-text"   id="basic-addon1">Email</span>
+                <input type = "email" name = "email" placeholder = "Your email" formControlName="email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            
+              <div class="input-group">
+                <span class="input-group-text">Comments</span>
+                <textarea name = "message" placeholder = "Your message" formControlName="message"  class="form-control" aria-label="With textarea"></textarea>
+              </div>
+           
+            
+            <input class="btn btn-primary me-auto m-2" type = "submit" value = "Send">
+          </form> 
+        
+          
+        </div>
+      </div>
+   
 </div>
 </div>

@@ -13,7 +13,10 @@ let corsOptions = {
 
 app.options(cors(corsOptions)) 
 
-
+ app.post('/comment',cors(corsOptions),(req,res)=>{
+	console.log(req.body)
+	res.send(200)
+ });
 app.get('/image/:name',cors(corsOptions), (req, res) => {
 	fileName = '/Images/'+req.params.name;
 	console.log(fileName)

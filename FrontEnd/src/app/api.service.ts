@@ -21,6 +21,11 @@ export class ApiService {
       search: String(upc)
     }})
   }
+  postComment(formData:any){
+    console.log(this.http.post(this.urlBase+'/comment',formData))
+    
+    
+  }
   
   getImageUrl(upc:string){
     return this.urlBase+'/image/'+String(upc)+'.jpg'

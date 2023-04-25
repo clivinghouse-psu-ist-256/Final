@@ -1,0 +1,49 @@
+<div class="row gap-2 p-2">
+         
+          <div *ngFor="let item of cart.items" class="border col-12">
+            <div class="row">
+              
+              <div  class="col-6 d-flex border-end">
+                
+                  <div class=" m-1" >
+                  
+                                      <img [src]="getImageUrl(item.item.upc)" class="mx-auto d-block w-75 h-75"  alt="">
+
+                 
+                             <div class="ms-1 mx-auto">
+                              <b>{{item.item.name}} </b><br>
+                              <p style="font-size: x-small;"> UPC: {{item.item.upc}}</p>
+                             </div> 
+                </div>
+              </div>
+              <div  class="col-6  border-end d-flex pe-0 mr-0">
+                <div class="align-middle">
+                  <div class="d-flex mt-3 mb-3 align-middle" style="max-height:25%;">
+                 
+                    
+                    <button class="btn btn-outline-secondary"  type="button">+</button>
+                    
+                    
+                      <input type="number" max="100" min="0" class="form-control " style="text-align:center;" placeholder="amt" aria-label="Username" aria-describedby="basic-addon1">
+                    
+                    <button class="btn btn-outline-secondary" type="button">-</button>
+                    
+                      <a  (click)="removeItem(item)" class="m-1 p-0 d-flex align-items-center"><fa-icon [icon]="faTrash"></fa-icon></a>
+                    
+                  
+                </div>
+                </div>
+          
+              </div>
+                <!-- <div  class="col-1 m-0 p-0 d-flex justify-content-center">
+                
+                  
+                  
+                </div> -->
+           
+            </div>
+          
+      
+        </div>
+        
+      </div>
