@@ -21,6 +21,8 @@ createContactForm(){
 }
 onSubmit() {
   console.log('Your form data : ', this.contactForm?.value );
-  this.apiserve.postComment(this.contactForm?.value)
+  this.apiserve.postComment(this.contactForm?.value).subscribe((res)=>{
+    
+  })
 }
 }

@@ -22,10 +22,9 @@ export class ApiService {
     }})
   }
   postComment(formData:any){
-    console.log(this.http.post(this.urlBase+'/comment',formData))
-    
-    
-  }
+    return this.http.post(this.urlBase+'/comment',JSON.stringify(formData))
+   
+    }
   
   getImageUrl(upc:string){
     return this.urlBase+'/image/'+String(upc)+'.jpg'
