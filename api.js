@@ -13,7 +13,7 @@ let corsOptions = {
 
 app.options(cors(corsOptions)) 
 
- app.post('/comment',cors(corsOptions),(req,res)=>{
+app.post('/comment',cors(corsOptions),(req,res)=>{
 	console.log(req.body)
 	res.send(200)
  });
